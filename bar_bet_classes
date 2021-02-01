@@ -1,0 +1,17 @@
+# I want to create a variable in one class and then use it another class without using global
+
+class ExampleClass():
+    # I understand that def __init__(self,**kwargs) here will initialize the object environment, but I don't think I need it here. 
+    def create_variable_through_function():
+        created_variable = "THIS"
+        
+class OtherClass():
+    def get_variable_previously_created(self,created_variable): # and do more stuff with it
+        changed_variable = "".join((x + x + x) * 3 for x in created_variable)
+        return(changed_variable)
+
+def run():
+    ExampleClass.create_variable_through_function()
+    return_variable = OtherClass.get_variable_previously_created(self,None) #throws an error because I don't know what to do with self
+    
+print(run())
